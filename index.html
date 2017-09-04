@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,32 +9,32 @@
     <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="script.js"></script>
     <link rel="stylesheet" href="styles.css" />
-    
+
 </head>
+
 <body>
     <main>
-        <section>
-            <h2>
-                This is where the code lives!!!!
-            </h2>
+        <!-- <section>
+            <input type="text" name="Employee First Name?"> <button>Submit</button>
         </section>
         <section>
-            <h2>
-                This is where the code lives!!!!
-            </h2>
-        </section><section>
-            <h2>
-                This is where the code lives!!!!
-            </h2>
-        </section><section>
-            <h2>
-                This is where the code lives!!!!
-            </h2>
-        </section><section>
-            <h2>
-                This is where the code lives!!!!
-            </h2>
+            <input type="Employee Last Name?"> <button>Submit</button>
         </section>
+        <section>
+            <input type="Employee ID?"> <button>Submit</button>
+        </section> -->
+        <form>
+            First name:<br>
+            <input type="text" name="firstname" data-employeeInfo="first-name">
+            Last name:<br>
+            <input type="text" name="lastname" data-employeeInfo="last-name">
+            <input class="submit-button" type="submit" value="Submit" data-employeeInfo="first-name">
+        </form>
+        <button class="submit-button" data-employeeInfo="employee information"></button>
+
+
+        <div id="container"></div>
     </main>
 </body>
+
 </html>
