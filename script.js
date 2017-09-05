@@ -15,13 +15,13 @@ var costOfOperation = function() {
     //creating a new object that uses the object constructor
     var employeeProfile = new Person($('#firstNameInput').val(), $('#lastNameInput').val(), $('#idNumberInput').val(), $('#jobTitleInput').val(), $('#annualSalaryInput').val());
     //push employee attributes into "employeeInformationArray"
-    employeeInformationArray.push(employeeProfile);
+    // employeeInformationArray.push(employeeProfile);
     //total costs from salary
     totalSalaryCosts += Number(employeeProfile.annualSalary);
     //monthly totals from salary
     totalMonthSalary = Math.round(totalSalaryCosts / 12);
     //calculating monthly total costs of employees
-    $('.totalSalary').html(totalMonthSalary);
+    $('.totalSalary').text(totalMonthSalary);
     //targets the section that has class="employeeContainer" and adds all of the typed input into the DOM
     $('.employeeContainer').append('<p>Name:'+ ' ' + $('#firstNameInput').val() + ' ' + $('#lastNameInput').val() + '' + 
         '<br>ID Number:' + ' ' + $('#idNumberInput').val() + '' + 
@@ -39,4 +39,5 @@ function Person(firstName, lastName, idNumber, jobTitle, annualSalary) {
     this.idNumber = idNumber;
     this.jobTitle = jobTitle;
     this.annualSalary = annualSalary;
+    employeeInformationArray.push(this);
 } // end of "Person" constructor
