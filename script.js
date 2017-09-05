@@ -1,40 +1,42 @@
-console.log('js');
-$(document).ready(onReady);
-
-function onReady() {
-    console.log('jQuery has been activated!');
-    //event listeners
-    $('#addInfoButton').on('click', infoStorage);
+$(document).ready(nowReady);
+function nowReady() {
+    //event 'click' calls the function "costOfOperation" everytime the button w/ ID "addInfoButton" is clicked
+    $('#addInfoButton').on('click', costOfOperation);
 }
+//storing obtained employee information
+var employeeInformationArray = [];
 
-// function grabEmployeeInfo() {
-//     //var $container = $(this).data('employeeInfo');
-//     $('.container').append($('<div class=new-info>'));
-//     console.log(grabEmployeeInfo);
-// }
+//total costs starting out
+var totalSalaryCosts = 0;
+var totalMonthSalary = 0; 
 
+//function expression for logic
+var costOfOperation = function() {
+    //creating a new object that uses the object constructor
+    var employeeProfile = new Person($('#firstNameInput').val(), $('#lastNameInput').val(), $('#idNumberInput').val(), $('#jobTitleInput').val(), $('#annualSalaryInput').val());
+    //push employee attributes into "employeeInformationArray"
+    employeeInformationArray.push(employeeProfile);
+    //total costs from salary
+    totalSalaryCosts += Number(employeeProfile.annualSalary);
+    //monthly totals from salary
+    totalMonthSalary = Math.round(totalSalaryCosts / 12);
+    //calculating monthly total costs of employees
+    $('.totalSalary').html(totalMonthSalary);
+    //targets the section that has class="employeeContainer" and adds all of the typed input into the DOM
+    $('.employeeContainer').append('<p>Name:'+ ' ' + $('#firstNameInput').val() + ' ' + $('#lastNameInput').val() + '' + 
+        '<br>ID Number:' + ' ' + $('#idNumberInput').val() + '' + 
+        '<br>Job Title:' + ' ' + $('#jobTitleInput').val() + '' + 
+        '<br>Annual Salary:' + ' ' + '$'+  $('#annualSalaryInput').val() + 
+        '<br>Monthly Total Cost for this Employee:' + ' $' + Math.round($('#annualSalaryInput').val() / 12) + '</p>');
+    //clears the input fields so a new employee can be added
+        $('.info').val(''); 
+    }
 
-function infoStorage(){
-    //get employee information
-    //use it to create new item
-    new Item($('#firstName').val(), $('#lastName').val(), $('#idNumber').val(), $('#jobTitle').val(), $('#annualSalary').val());
-    //push employee inputs into constructor
-    //reset inputs
-    $('#firstName').val('');
-    $('#lastName').val(''); 
-    $('#idNumber').val('');
-    $('#jobTitle').val('');
-    $('#annualSalary').val('');
-}
-
-function Item(firstName, lastName, idNumber, jobTitle, annualSalary) {
+//object constructor of employee information
+function Person(firstName, lastName, idNumber, jobTitle, annualSalary) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.idNumber = idNumber;
     this.jobTitle = jobTitle;
     this.annualSalary = annualSalary;
-    // once created add to inventory
-    employeeInformation.push(this);
-} // end item constructor
-var employeeInformation = [];
-console.log(employeeInformation);
+} // end of "Person" constructor

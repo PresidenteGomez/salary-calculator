@@ -19,19 +19,32 @@
     <main>
         <section id="givenInfoSection"><br>
             <h2>Add Employee Information:</h2>
-            <input type='text' placeholder='First Name' id='firstName' />
-            <input type='text' placeholder='Last Name' id='lastName' />
-            <input type='text' placeholder='Identification Number' id='idNumber' />
-            <input type='text' placeholder='Job Title' id='jobTitle' />
-            <input type='text' placeholder='Annual Salary' id='annualSalary' />
-            <button id='addInfoButton'>Add</button>
+
+            <input class= 'info' type='text' placeholder='First Name' id='firstNameInput' />
+            </br>
+            <input class= 'info' type='text' placeholder='Last Name' id='lastNameInput' />
+            </br>
+            <input class= 'info' type='text' placeholder='Identification Number' id='idNumberInput' />
+            </br>
+            <input class= 'info' type='text' placeholder='Job Title' id='jobTitleInput' />
+            </br>
+            <input class= 'info' type='number' placeholder='Annual Salary' id='annualSalaryInput' />
+            </br>
+            <button id='addInfoButton' data->Add</button>
         </section>
-        <section><br>
-            <button id='deleteInfoButton'>Clear</button><br>
+       
+        <section class="employeeContainer">
         </section>
 
-        <div class="container"></div>
+        <section id="stuffDOM"><br>
+            <h3>Monthly Total Costs of Employees</h3>
+            <p>$<strong><span class=totalSalary></span></strong></p><br>
+        </section>
+        <!-- <section><br>
+            <button id='deleteInfoButton'>Clear</button><br>
+        </section> -->
     </main>
+
     <footer>
         <p>copyright 2017 Nestor Gomez Jimenez</p>
     </footer>

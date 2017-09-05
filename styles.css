@@ -1,29 +1,36 @@
 
 body {
-  font-family: courier;
-  background-color: #F4B8EE;
+ font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #FFDE0D;
 }
 div {
-  font-family: courier;
+font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   margin-left: 3%;
 }
 h1 {
   color: #000000;
-  font-family: arial;
+font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   margin-left: 1%;
 }
 h2 {
   color: #000000;
-  font-family: arial;
+font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   margin-left: 2%;
 }
 h3 {
-  color: #6D929B;
-  font-family: arial;
+  color: #000000;
+font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   margin-left: 2%;
 }
 p {
-  color: #FFFFFF;
-  font-family: courier;
+  color: #75C9FD;
+font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   
+}
+.totalSalary {
+  color: #000000;
+font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+#givenInfoSection{
+  display: center;
 }
